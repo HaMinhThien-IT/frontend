@@ -48,12 +48,15 @@ export default function IndexRight() {
         }
     }
     const  search = (name : string) =>{
-        if( name === ""){
+        if( name == ""){
             productController.listProduct(1, '', 4).then(res => {
                 setListProduct(res.productPage);      
+                setInputSearch(name)
             })
         }
-        productController.listProduct(1,name,4).then(res => { setListProduct(res.productPage )})
+        else{
+            productController.listProduct(1,name,4).then(res => { setListProduct(res.productPage )})
+        }
     }
 
 
@@ -87,7 +90,7 @@ export default function IndexRight() {
                 <img src="https://storage.googleapis.com/cdn.nhanh.vn/store/7136/bn/Artboard%2031.jpg" />
             </div>
             <div className="sreach">
-                <input type="text" placeholder='Tìm kiếm ...' onInput={()=>search(inputSearch)} onChange={e => { setInputSearch(e.target.value) }} />
+                <input type="text" placeholder='Tìm kiếm ...'  onChange={e => { search(e.target.value) }} />
 
             </div>
             <div className="newArr">
