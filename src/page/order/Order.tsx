@@ -84,7 +84,7 @@ export default function Checkout() {
             <div className='containerOrderBottom'>
             <p className='totalMoneyBottomTitle'>Tổng tiền</p>
             <p className='totalMoneyBottom'>{formatMoney(total)} vnd</p>
-            <button className='btnCheckout' onClick={onCheckOut}>Check out</button>
+           <Link className='btn' to='/checkout'> <button className='btnCheckout' onClick={onCheckOut}>Check out</button></Link>
     </div>
         </div>
     )
