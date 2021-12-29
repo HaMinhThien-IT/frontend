@@ -8,39 +8,52 @@ import ProductHome from '../productHome/ProductHome'
 
 export default function IndexRight() {
     const [listProduct, setListProduct] = useState<Product[]>([])
+    const [inputSearch, setInputSearch] = useState<string>('')
     const [count, setCount] = useState([{}]);
-    const [next, setNext] = useState<boolean>(true)
+
     const [pageNumber, setPageNumber] = useState<number>(1)
-    console.log(next);
+    useEffect(() => {     
+            productController.listProduct(1, '', 4).then(res => {
+                setListProduct(res.productPage);
+                setCount(res.arr)
+            })
 
-
-
-    useEffect(() => {
-        productController.listProduct(1, '', 4).then(res => {
-            setListProduct(res.productPage);
-            setCount(res.arr)
-        })
     }, [])
     const onNumber = (id: number) => {
-
-        productController.listProduct(id, '', 4).then(res => {
+        if(inputSearch !== null){
+           productController.listProduct(id, '', 4).then(res => {
             setListProduct(res.productPage);
             setPageNumber(id)
-        })
+        }) 
+        }else{
+            productController.listProduct(id, inputSearch, 4).then(res => {
+                console.log(res.productPage);
+                setPageNumber(id)
+            })  
+        }
+        
     }
     const nextPage = () => {
-        if (pageNumber >1) {
+        if (pageNumber > 1) {
 
-            onNumber(pageNumber - 1)   
-            
+            onNumber(pageNumber - 1)
+
         }
     }
     const pevPage = () => {
         if (pageNumber < count.length) {
 
-            onNumber(pageNumber + 1) 
-                      
+            onNumber(pageNumber + 1)
+
         }
+    }
+    const  search = (name : string) =>{
+        if( name === ""){
+            productController.listProduct(1, '', 4).then(res => {
+                setListProduct(res.productPage);      
+            })
+        }
+        productController.listProduct(1,name,4).then(res => { setListProduct(res.productPage )})
     }
 
 
@@ -73,12 +86,16 @@ export default function IndexRight() {
             <div className="banner" id="banner">
                 <img src="https://storage.googleapis.com/cdn.nhanh.vn/store/7136/bn/Artboard%2031.jpg" />
             </div>
+            <div className="sreach">
+                <input type="text" placeholder='Tìm kiếm ...' onInput={()=>search(inputSearch)} onChange={e => { setInputSearch(e.target.value) }} />
+
+            </div>
             <div className="newArr">
 
                 <div className="pagination">
                     <button className={`GOTO ${pageNumber === 1 ? "active" : ''}`} onClick={nextPage} > <i className="fas fa-arrow-left"></i> </button>
-                    {count.map((item, index) => <button className={`btnPage ${pageNumber === index+1 ? 'btnPageActive' : '' 
-                    } `} onClick={() => onNumber(index + 1)} key={index}>{index + 1}</button>)}
+                    {count.map((item, index) => <button className={`btnPage ${pageNumber === index + 1 ? 'btnPageActive' : ''
+                        } `} onClick={() => onNumber(index + 1)} key={index}>{index + 1}</button>)}
                     <button className={`GOTO ${pageNumber === count.length ? "active" : ''}`} onClick={pevPage}> <i className="fas fa-arrow-right"></i></button>
                 </div>
 

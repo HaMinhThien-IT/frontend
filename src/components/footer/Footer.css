@@ -1021,3 +1021,8 @@ footer{
     .chinhSachBaoHanh i {
         font-size: 10px;
     }
+     .sreach input{
+        margin-left: 20px;
+        width: 50%;
+        margin-bottom: 20px;
+     }
