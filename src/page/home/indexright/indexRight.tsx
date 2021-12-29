@@ -90,7 +90,8 @@ export default function IndexRight() {
                 <img src="https://storage.googleapis.com/cdn.nhanh.vn/store/7136/bn/Artboard%2031.jpg" />
             </div>
             <div className="sreach">
-                <input type="text" placeholder='Tìm kiếm ...'  onChange={e => { search(e.target.value) }} />
+                <input type="text" placeholder='Tìm kiếm ...'  onChange={e => { search
+                    (e.target.value) }} />
 
             </div>
             <div className="newArr">
