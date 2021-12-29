@@ -1,0 +1,91 @@
+
+
+/*  giỏ hàng */
+.contentProduct p {
+    color: #000;
+}
+
+.itemGioHang{
+    /* nam ngang */
+    display: flex;
+    /*  nam tren 1 hang */
+    flex-direction: row;
+    align-items: center;
+}
+.item-product{
+    flex-basis: 20%;
+    text-align: center;
+    align-items: center;
+   
+}
+.item-product img{
+    width: 110px;
+    height: auto;
+}
+.contentProduct h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: blue;
+
+}
+.itemGioHang{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.iconx:hover{
+    color: blue;  
+}
+.item-product p {
+    color: #000;
+    font-weight: 400;
+    font-size: 15px;
+}
+#mau1 {
+    color: blue;  
+    font-weight: 400; 
+}
+#mau1 p{
+    color: blue;  
+    font-weight: 400;
+}
+.thanhToan h3 {
+    color:blue ;
+    font-weight: 400;
+}
+
+.tongTien{
+    /* nam ngang */
+    display: flex;
+    /*  nam tren 1 hang */
+    flex-direction: row;
+    align-items: center;
+}
+.thanhToan{
+    flex-basis: 20%;
+    text-align: center;
+    align-items: center;
+}
+.thanhSanPham{
+   margin-top: 10px;
+ 
+}
+.itemGioHang{
+    margin-top: 20px;
+}
+.thanhToan button:hover{
+    background-color: #367677;
+    cursor: pointer;
+}
+.thanhToan button{
+    padding: 10px 40px;
+   background-color: blue;
+   outline: none;
+   border: 1px solid #ddd;
+   color: white;
+  border-radius: 4px; 
+}
+

@@ -1,0 +1,122 @@
+.contentProduct p {
+    color: #000;
+}
+.itemGioHang{
+    /* nam ngang */
+    display: flex;
+    /*  nam tren 1 hang */
+    flex-direction: row;
+    align-items: center;
+}
+.item-product{
+    flex-basis: 20%;
+    text-align: center;
+    align-items: center;
+   
+}
+.item-product img{
+    width: 110px;
+    height: auto;
+}
+.contentProduct h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: blue;
+
+}
+.itemGioHang{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+.iconx:hover{
+    color: blue;  
+}
+.item-product p {
+    color: #000;
+    font-weight: 400;
+    font-size: 15px;
+}
+#mau1 {
+    color: blue;  
+    font-weight: 400; 
+}
+#mau1 p{
+    color: blue;  
+    font-weight: 400;
+}
+.thanhToan h3 {
+    color:blue ;
+    font-weight: 400;
+}
+
+.tongTien{
+    /* nam ngang */
+    display: flex;
+    /*  nam tren 1 hang */
+    flex-direction: row;
+    align-items: center;
+}
+.thanhToan{
+    flex-basis: 20%;
+    text-align: center;
+    align-items: center;
+}
+.thanhSanPham{
+   margin-top: 10px;
+ 
+}
+.itemGioHang{
+    margin-top: 20px;
+}
+.thanhToan button:hover{
+    background-color: #367677;
+    cursor: pointer;
+}
+.thanhToan button{
+    padding: 10px 40px;
+   background-color: blue;
+   outline: none;
+   border: 1px solid #ddd;
+   color: white;
+  border-radius: 4px; 
+}
+.item-product button{
+    display: flex;
+    align-items: center;
+    outline: none;
+    cursor: pointer;
+    border: 0;
+    font-size: .875rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .1s cubic-bezier(.4,0,.6,1);
+    border: 1px solid rgba(0,0,0,.09);
+    border-radius: 2px;
+    background: transparent;
+    color: rgba(0,0,0,.8);
+    width: 32px;
+    height: 35px;
+}
+.item-product{
+    display: flex;
+    align-items: center;
+}
+.item-product input{
+    width: 80px;
+    height: 35px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    cursor: text;
+    border-radius: 0;
+    outline: none;
+}

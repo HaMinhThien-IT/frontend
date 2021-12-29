@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,regular,500,600,700);
+*{
+     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.khoiTrai input{
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+body{
+    font-family:Quicksand ;
+}
+
+input  {
+    display: flex;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    width: 80%;
+}
+label{
+    margin-left: 40px; 
+}
+button{
+
+    width: 40%;
+    padding: 10px 20px;
+    background: none;
+    border: 1px solid #ddd;
+
+}
+.from{
+   
+    width: 100%;
+
+   margin-top: 60px;
+}
+small{
+    display: flex;
+    width: 100%;
+    padding: 5px 10px 37px 37px;
+    margin-top: -20px;
+    font-weight: 500;
+    color: red;
+    
+}
+.khoiTrai{
+    margin-top: 1%;
+    float: left;
+    width: 30%;
+    height: 100%;
+    border: 1px solid #ddd;
+    min-height: 500px;
+    box-shadow: 1px 1px 4px #ddd;
+}
+.khoiPhai{
+    margin-top: 1%;
+    margin-left: 1%;
+    float: left;
+    width: 69%;
+    border: 1px solid #ddd;
+    min-height: 500px;
+    box-shadow: 1px 1px 4px #ddd;
+}
+.khoiTrai button{
+    width: 40%;
+    margin-left: 26%; 
+}
+img{
+    width: 100%;
+}
+.dsBanChay {
+    width: 22%;
+    margin-left: 2.2%;
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    text-align: center;
+    margin-top: 25px;
+    box-shadow: 1px 1px 4px #DDD;
+    background-color: #ffffff;
+    padding: 10px;
+}
+.khoiTrai h3{
+    text-align: center;
+    margin: 15px 0px;
+}
+

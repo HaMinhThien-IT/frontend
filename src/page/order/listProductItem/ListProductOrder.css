@@ -1,0 +1,52 @@
+img{
+    width: 100%;
+}
+.containerListProductOrder{
+    margin-top: 40px;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 7px; 
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;}
+.containerITem{
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 9fr 5fr 5fr 5fr 5fr ;
+    align-items: center;
+    margin-top: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.containerITem:first-child{
+    border: none;
+}
+.containerITem:last-child{
+    border: none;
+}
+
+.containerITem img{
+    width: 100px;
+    height: 100px;
+}
+.containerListProductOrder .titleDeliveryAddress{
+    margin-bottom: 10px;
+}
+.containerITem .nameItemOrder{
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    
+}
+.containerITem .quantity{
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}
+.containerITem .priceItemOrder {
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}
+.containerITem .totalMoney {
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}

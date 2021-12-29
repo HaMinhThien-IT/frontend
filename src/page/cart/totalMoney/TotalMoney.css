@@ -1,0 +1,35 @@
+.total{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 240px;
+}
+.total .totalMoney{
+    color: black;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0px 15px;
+}
+.total .titleTotalMoney{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+.total button{
+    padding: 10px 15px;
+    color: blue;
+    border: 1px solid blue;
+    background: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    transition-duration: 0.4s;
+}
+.total button:hover{
+    color: white;
+    border: 1px solid blue;
+    background: blue;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}

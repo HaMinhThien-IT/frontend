@@ -1,0 +1,13 @@
+.history{
+    
+        margin: 0px;
+        font-weight: 700;
+        line-height: 1.5;
+        font-size: 1.125rem;
+        font-family: "Public Sans", sans-serif;
+        color: rgb(251, 132, 116);
+    
+}
+.containerOrder1{
+    padding: 5px 300px;
+}

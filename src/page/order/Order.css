@@ -1,0 +1,83 @@
+.conTainerOrderx{
+    padding: 5px 300px;
+   
+}
+.containerOrderBottom{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 30px;
+    position: -webkit-sticky;
+     position: sticky;
+     bottom: 0;
+ }
+ .containerOrderBottom .totalMoneyBottomTitle{
+     color: rgb(235, 71, 49);
+     font-size: 20px;
+     font-weight: 600;
+ }
+ .containerOrderBottom .totalMoneyBottom{
+     color: rgb(236, 59, 35);
+     font-size: 20px;
+     font-weight: 600;
+     margin: 0px 15px;
+ }
+  .btnCheckout{
+ 
+     display: inline-flex;
+     -webkit-box-align: center;
+     align-items: center;
+     -webkit-box-pack: center;
+     justify-content: center;
+     position: relative;
+     box-sizing: border-box;
+     -webkit-tap-highlight-color: transparent;
+     outline: 0px;
+     border: 0px;
+     margin: 0px;
+     cursor: pointer;
+     user-select: none;
+     vertical-align: middle;
+     appearance: none;
+     text-decoration: none;
+     font-weight: 700;
+     line-height: 1.71429;
+     font-size: 0.9375rem;
+     text-transform: none;
+     font-family: "Public Sans", sans-serif;
+     min-width: 64px;
+     padding: 8px 22px;
+     border-radius: 4px;
+     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+     color: rgb(255, 255, 255);
+     background-color: rgb(251, 132, 116);
+     width: 15%;
+     box-shadow: rgb(251 132 116 / 24%) 0px 8px 16px 0px;
+     height: 48px;
+ }
+ .containerOrderBottom button:hover{
+     background-color: rgb(216, 112, 99);
+ }
+ .containerOrder{
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 7px; 
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+ }
+ 
+ .containerInput .inputOrder{
+     padding: 10px 20px ;
+     border: 1px solid #ddd;
+     margin-top: 10px;
+     height: 45px;
+ }
+ .containerInput .inputOrder:hover{  
+     border: 1px solid black; 
+ }
+ .titleDeliveryAddress{
+     margin: 0px;
+     font-weight: 600;
+     line-height: 1.5;
+     font-size: 1rem;    
+     color: rgb(69, 79, 91);
+ }

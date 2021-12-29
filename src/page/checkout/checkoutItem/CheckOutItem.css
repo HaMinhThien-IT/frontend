@@ -1,0 +1,178 @@
+ .containerCheckoutItem{
+     margin-top: 10px;
+     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+ }
+ .orderHeader{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 25px;
+ }
+.orderHeaderInforSHop{
+    display: flex;
+    align-items: center;
+}
+.orderHeaderInforSHop button{
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 1.71429;
+    font-size: 0.8125rem;
+    text-transform: none;
+    font-family: "Public Sans", sans-serif;
+    min-width: 64px;
+    padding: 3px 9px;
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border: 1px solid rgba(251, 132, 116, 0.5);
+    color: rgb(251, 132, 116);
+}
+.orderHeaderInforSHop button:hover{
+    border: 1px solid rgba(168, 74, 62, 0.5);
+}
+.orderHeaderInforSHop p{
+    margin: 0px;
+    font-weight: 600;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    font-family: "Public Sans", sans-serif;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: black;
+}
+.orderHeaderTime .timeOrder{
+   text-align: right;
+  
+   line-height: 1.5;
+  
+   font-weight: 400;
+   font-size: 14px;
+   color: rgb(69, 79, 91);
+}
+.orderHeaderTime .timeOrder span{
+    margin: 0px;
+    font-weight: 600;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    border-left: 2px solid rgb(34, 154, 22);
+ 
+    padding-left: 4px;
+    color: rgb(34, 154, 22);
+ }
+ .orderHeaderTime .code{
+
+    color: #454F5B;
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 14px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+ }
+ /* ------------------------------- */
+img{
+    width: 100%;
+}
+.productCheckout{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 25px;
+}
+ .productCheckoutInfor img{
+    width: 105px;
+    height: 105px;
+    border-radius: 5px;
+ }
+ .productCheckoutInfor{
+     display: flex;
+     
+ }
+ .productCheckoutInfor .name{
+    margin: 0px;
+    font-weight: 600;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+   
+    max-width: 230px;
+ }
+ .inforProductCheckout .note{
+    margin: 0px;
+    line-height: 1.5;
+    font-size: 0.75rem;
+    color: #555655;
+    font-weight: 400;
+ }
+ .inforProductCheckout .quantity{
+     font-size: 18px;
+     font-weight: 600;
+ }
+ .priceCheckout p{
+    margin: 0px;
+    line-height: 1.5;
+    font-size: 1.125rem;
+    
+    font-weight: 500;
+    color: rgb(251, 132, 116);
+ }
+ /* ------------------------------------- */
+.totalProductCheckout{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 15px;
+}
+ .shiping .fee{
+ 
+    line-height: 1.5;
+    font-size: 0.75rem;
+    color: #555655;
+    font-weight: 400;
+ }
+ .shiping .cost{
+    margin: 0px;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    color: #555655;
+    font-weight: 400;
+ }
+ .shiping span{
+    margin: 0px;
+    line-height: 1.5;
+    font-size: 1.125rem;
+    align-items: center;
+    font-weight: 500;
+    color: rgb(251, 132, 116);
+    
+ }
+
+ .totalpriceShoping p{
+   
+    line-height: 1.5;
+    color: #555655;
+    font-weight: 400;
+    font-size: 16px;
+ }
+ .totalpriceShoping span{
+    margin: 0px;
+    line-height: 1.5;
+    font-size: 1.125rem;
+    
+    font-weight: 500;
+    color: rgb(251, 132, 116);
+ }
