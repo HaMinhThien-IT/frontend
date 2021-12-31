@@ -12,19 +12,16 @@ import { toast } from 'react-toastify'
 export default function ProductDetail() {
     const [product, setProduct] = useState<Product>()
     const [quantity,setQuantity] = useState<number>(1)
+    console.log(product);
     const { id } = useParams();
     useEffect(() => {
         productController.detail(String(id)).then(res => { setProduct(res) }
         )
+        console.log(product);
+        
     }, [id])
 
-    // cartProduct[i] ={
-    //     id : cartProduct[i].id,
-    //     image : cartProduct[i].image,
-    //     name : cartProduct[i].name,
-    //     price : Number(cartProduct[i].price),
-    //     quantity : quantity = quantity + quantity
-    // }
+
 
 
     const addToCart = () => {

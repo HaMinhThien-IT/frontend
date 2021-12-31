@@ -4,13 +4,12 @@ import { Order } from '../../../model/order'
 import './CheckOutItem.css'
 export default function CheckOutItem(props:props) {
    let date:string = new Date(props.order.createAt).toString()
-   let munutes = new Date(props.order.createAt).getMinutes().toString()
+   let minutes = new Date(props.order.createAt).getMinutes().toString()
    let hours = new Date(props.order.createAt).getHours().toString()
    let day = new Date(props.order.createAt).getDay().toString()
    let month = new Date(props.order.createAt).getMonth().toString()
    let year = new Date(props.order.createAt).getFullYear().toString()
-   console.log(hours,munutes);
-   
+
 
     return (
         <div className='containerCheckoutItem'>
@@ -21,7 +20,7 @@ export default function CheckOutItem(props:props) {
                     <button className="viewShop">View shop</button>
                 </div>
                 <div className="orderHeaderTime">
-                    <div className="timeOrder">{hours +' : ' + munutes +' '+ day +'/' + month +'/'+ year}<span>Pending</span></div>
+                    <div className="timeOrder">{hours +' : ' + minutes +' '+ day +'/' + month +'/'+ year}<span>Pending</span></div>
                     <div className="code">{props.order.name} (5676547456), 567465745 456746574567546, 45675467, 745674567456</div>
                 </div>
             </div>

@@ -14,6 +14,12 @@ export default function TableProduct() {
     const [edit, setEdit] = useState<Product>({ id: '', name: '', image: '', price: 1 })
     const [filter, setFilter] = useState<Product>({ id: '', name: '', image: '', price: 1 })
 
+    
+    useEffect(() => {
+      productController.list().then(res => {
+        setListProduct(res);                     
+      })
+    }, [])
     const onDelete = (id: string): void => {
         productController.delete(id).then(res=>setListProduct(res))
         toast.success('Xóa sản phẩm thành công', {
@@ -21,11 +27,6 @@ export default function TableProduct() {
             autoClose: 3000
           })
     }
-    useEffect(() => {
-      productController.list(1).then(res => {
-        setListProduct(res);          
-      })
-    }, [])
     const setDataEdit = (product: Product) => {
         setEdit({ ...product })
     }
@@ -38,8 +39,8 @@ export default function TableProduct() {
               })
         }
         else {
-            product = { ...product, id: uuidv4() }
-            productController.add(product).then(res=>setListProduct(res)
+          
+            productController.add(product.image,product.name,product.price).then(res=>setListProduct(res)
             )
             toast.success('Thêm sản phẩm thành công', {
                 position: 'top-center',
