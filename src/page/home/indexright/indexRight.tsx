@@ -14,7 +14,8 @@ export default function IndexRight() {
     const [pageNumber, setPageNumber] = useState<number>(1)
     useEffect(() => {     
             productController.listProduct(1, '', 4).then(res => {
-                setListProduct(res.productPage);
+                setListProduct(res.product);
+                
                 setCount(res.arr)
             })
 
@@ -22,13 +23,14 @@ export default function IndexRight() {
     const onNumber = (id: number) => {
         if(inputSearch !== null){
            productController.listProduct(id, '', 4).then(res => {
-            setListProduct(res.productPage);
+            setListProduct(res.product);
             setPageNumber(id)
         }) 
         }else{
             productController.listProduct(id, inputSearch, 4).then(res => {
-                console.log(res.productPage);
+                console.log(res.product);
                 setPageNumber(id)
+                setCount(res.arr)
             })  
         }
         
@@ -50,12 +52,16 @@ export default function IndexRight() {
     const  search = (name : string) =>{
         if( name == ""){
             productController.listProduct(1, '', 4).then(res => {
-                setListProduct(res.productPage);      
+                setListProduct(res.product);      
                 setInputSearch(name)
             })
         }
         else{
-            productController.listProduct(1,name,4).then(res => { setListProduct(res.productPage )})
+            productController.listProduct(1,name,4).then(res => { 
+            setListProduct(res.product )
+            setCount(res.arr)
+        })
+            
         }
     }
 

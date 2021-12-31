@@ -17,7 +17,6 @@ export default function ProductDetail() {
     useEffect(() => {
         productController.detail(String(id)).then(res => { setProduct(res) }
         )
-        console.log(product);
         
     }, [id])
 
