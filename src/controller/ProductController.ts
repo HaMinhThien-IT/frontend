@@ -32,13 +32,14 @@ class ProductController {
     delete(id: string): Promise<Product[]> {
         return axios.delete(`${localHost}/product/${id}`).then(res => { return res.data })
     }
-    update(product:Product): Promise<Product[]> {
-        return axios.put(`${localHost}/edit/${product.id}`, {
-            product
-        }).then(res => { return res.data })
+    update(image: string, name: string, price: number,id:string): Promise<Product[]> {
+        return axios.put(`${localHost}/edit/${id}`, { image, name, price }).then(res => { return res.data })
     }
     detail(id: string): Promise<Product> {
         return axios.get(`${localHost}/detail/${id}`).then(res => { return res.data })
+    }
+    search(name:string){
+        return axios.get(`${localHost}/filter/${name}`).then(res => {return res.data})
     }
 }
 export const productController = new ProductController();
