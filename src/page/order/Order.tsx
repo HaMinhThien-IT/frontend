@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { formatMoney } from '../../components/helper'
 import { orderController } from '../../controller/ OrderController'
+import { BuyUser } from '../../model/BuyUser'
 import { Cart } from '../../model/Cart'
 import { Cartx } from '../../model/Cartx'
-import { Order } from '../../model/order'
+import { Order, OrderWithDetail } from '../../model/order'
 
 import ListProductOrder from './listProductItem/ListProductOrder'
 
@@ -24,28 +25,13 @@ export default function Checkout() {
     for (let i = 0; i < listCartItem.length; i++) {
         total += listCartItem[i].price * listCartItem[i].quantity       
     }
-    // const order:Cart ={
-    //     product:{name:'',price:0,image:'',quantity:0},
-    //     name: '',address:'',email:'',createAt:Date.now(),numberPhone:0
-    // }
-    //  const [newOrder,setNewOrder] = useState<Order>(order)
-   
-    
+    const buyer:BuyUser ={
+       nameUser : '',numberPhone:'',address:'',email:'',user_id:3
+    }
+     const [user,setUser] = useState<BuyUser>(buyer)
     const onCheckOut = () =>{
-        // let ItemOrder : Order;
-        // for(let i =0;i<listCartItem.length;i++){
-        //     ItemOrder = {
-        //         product : listCartItem[i],
-        //         name : newOrder.name,
-        //         email : newOrder.email,
-        //         numberPhone : newOrder.numberPhone,
-        //         address: newOrder.address,
-        //         createAt : Date.now()
-        //    }
-        //     orderController.checkout(ItemOrder)
-        //     console.log(ItemOrder);
-            
-        // }
+        orderController.checkout(user,listCartItem[0].order_id)  
+
         toast.success('Mua hàng thành công', {
             position: 'bottom-left',           
             autoClose: 3000
@@ -62,10 +48,10 @@ export default function Checkout() {
                 Delivery Address
             </div>
             <div className="containerInput">
-            {/* <input className='inputOrder' type="text" placeholder='Name ...' onChange={e =>(setNewOrder({...newOrder,name:e.target.value}))}/>
-            <input className='inputOrder' type="text" placeholder='Number phone ...'onChange={e =>(setNewOrder({...newOrder,numberPhone:Number(e.target.value)}))}/>
-            <input className='inputOrder' type="text" placeholder='Address'onChange={e =>(setNewOrder({...newOrder,address:e.target.value}))}/>
-            <input className='inputOrder' type="text" placeholder='Email'onChange={e =>(setNewOrder({...newOrder,email:e.target.value}))}/> */}
+            <input className='inputOrder' type="text" placeholder='Name ...' onChange={e =>(setUser({...user,nameUser:e.target.value}))}/>
+            <input className='inputOrder' type="text" placeholder='Number phone ...'onChange={e =>(setUser({...user,numberPhone:e.target.value}))}/>
+            <input className='inputOrder' type="text" placeholder='Address'onChange={e =>(setUser({...user,address:e.target.value}))}/>
+            <input className='inputOrder' type="text" placeholder='Email'onChange={e =>(setUser({...user,email:e.target.value}))}/>
             </div>
         </div>
             <div className='containerListProductOrder'>
@@ -86,7 +72,8 @@ export default function Checkout() {
             <div className='containerOrderBottom'>
             <p className='totalMoneyBottomTitle'>Tổng tiền</p>
             <p className='totalMoneyBottom'>{formatMoney(total)} vnd</p>
-           <Link className='btn' to='/checkout'> <button className='btnCheckout' onClick={onCheckOut}>Check out</button></Link>
+            <Link className='btn' to='/checkout'>  <button className='btnCheckout' onClick={onCheckOut}>Check out</button></Link> 
+          
     </div>
         </div>
     )

@@ -1,16 +1,10 @@
 import axios from "axios";
-import { Cart } from "../model/Cart";
-import { Order } from "../model/order";
+import { BuyUser } from "../model/BuyUser";
 let localHost: string = 'http://localhost:3000'
 class OrderController {
-    checkout(ItemOrder: Order): Promise<Order> {
-        return axios.post(`${localHost}/order/checkout`, { ItemOrder })
+    checkout(user:BuyUser,order_id:string){
+        return axios.post(`${localHost}/checkout`,{user,order_id})
     }
-    // getListOrder() {
-    //     return axios.get(`${localHost}/order/checkout/list`).then(res => {
-    //         return res.data 
-    //     })
-    // }
     getListOrderProduct(user_id:number){
         return axios.get(`${localHost}/getListOrder/${user_id}`).then(res => {return res.data})
     }
