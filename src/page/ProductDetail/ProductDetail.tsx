@@ -7,6 +7,7 @@ import { productController } from '../../controller/ProductController'
 import { Product } from '../../model/Product'
 import { Cart } from '../../model/Cart'
 import { toast } from 'react-toastify'
+import { orderController } from '../../controller/ OrderController'
 
 
 export default function ProductDetail() {
@@ -24,32 +25,8 @@ export default function ProductDetail() {
 
 
     const addToCart = () => {
-        let cartProduct: Cart[] = [];
-        let JSONCart = localStorage.getItem("Cart")
-        if (JSONCart != null) {
-            cartProduct = JSON.parse(JSONCart)
-        }
-        let check:boolean= true
-        for(let i =0;i<cartProduct.length;i++){
-            if(cartProduct[i].id === product?.id){
-               check = false
-               cartProduct[i].quantity = cartProduct[i].quantity + quantity
-            }
-        }
-        
-        if(check === true){
-            let cartTemp: Cart ;
-            cartTemp={
-                    id: String(product?.id),
-                    image : String(product?.image),
-                    name : String(product?.name),
-                    price : Number(product?.price),
-                    quantity : quantity
-                }  
-                cartProduct.push(cartTemp)  
-               
-        }  
-        localStorage.setItem('Cart', JSON.stringify(cartProduct))
+        // 
+        orderController.cart(String(id),quantity,Number(product?.price),3)
         toast.success('Thêm đơn hàng thành công', {
             position: 'top-center',
             autoClose: 3000

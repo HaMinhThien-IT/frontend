@@ -16,6 +16,7 @@ import Order from './page/order/Order';
 import CheckOut from './page/checkout/CheckOut';
 
 
+
 function App() {
   return (
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/cart' element={<CartPage />}></Route>
         <Route path='/order' element={<Order />}></Route>
         <Route path='/checkout' element={<CheckOut />}></Route>
+       
       </Routes>
     </BrowserRouter>
   );

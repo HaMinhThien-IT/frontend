@@ -12,13 +12,7 @@ class ProductController {
             return res.data
         })
     }
-
-    // getPage(): Promise<Product[]> {
-    //     return axios.get(`${localHost}/page/${1}`).then(res => {
-    //         return res.data.arr
-    //     })
-    // }
-
+    
     add(image: string, name: string, price: number): Promise<Product[]> {
         return axios.post(`${localHost}/add`, { image, name, price }).then(res => { return res.data })
     }

@@ -1,9 +1,10 @@
 import React from 'react'
 import { formatMoney } from '../../../components/helper'
 import { Cart } from '../../../model/Cart'
+import { Cartx } from '../../../model/Cartx'
+import { OrderWithDetail } from '../../../model/order'
 import './CartItem.css'
 export default function CartItem(props: props) {
-    
     return (
         <div>
             <div className="itemGioHang">
@@ -20,18 +21,18 @@ export default function CartItem(props: props) {
                 </div>
                 <div className="item-product">
 
-                    <button onClick={()=>props.plus(props.cart.id,props.cart.quantity)}> <i className="fas fa-plus"></i></button>
+                    <button onClick={()=>props.plus(props.cart.order_product_id)}> <i className="fas fa-plus"></i></button>
                     <input type="text" value={props.cart.quantity} 
                     />
-                    <button onClick={()=>props.minus(props.cart.id,props.cart.quantity)}  > <i className="fas fa-minus"></i></button>
+                    <button onClick={()=>props.minus(props.cart.order_product_id,props.cart.quantity)}  > <i className="fas fa-minus"></i></button>
 
                     
                 </div>
                 <div className="item-product">
-                    <p>{formatMoney(props.cart.price * props.cart.quantity)}<span> NVĐ</span></p>
+                    <p>{formatMoney(props.cart.quantity * props.cart.price)}<span> NVĐ</span></p>
                 </div>
                 <div className="item-product">
-                    <i className=" iconx fas fa-trash-alt" onClick={()=>props.remove(props.cart.id)} />
+                    <i className=" iconx fas fa-trash-alt" onClick={()=>props.remove(props.cart.order_product_id)} />
                 </div>
             </div>
         </div>
@@ -39,9 +40,9 @@ export default function CartItem(props: props) {
 }
 
 interface props {
-    cart: Cart,
+    cart: Cartx,
     minus : (id:String,quantity:number) => void ,
-    plus : (id:String,quantity:number) => void  ,
+    plus : (id:String) => void  ,
     remove : (id:String)=>void
 
 }

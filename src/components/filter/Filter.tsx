@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Filter.css'
-import { listProducts, Product } from '../../model/Product'
+import {  Product } from '../../model/Product'
 
 export default function Filter(props : ChildComponentProps) {
     const [filter,setFilter] = useState<Product>(props.data)

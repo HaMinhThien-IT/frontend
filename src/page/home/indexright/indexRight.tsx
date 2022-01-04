@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import Footer from '../../../components/footer/Footer'
 import { productController } from '../../../controller/ProductController'
-import { listProducts, Product } from '../../../model/Product'
+import { Product } from '../../../model/Product'
 import ProductHome from '../productHome/ProductHome'
 
 

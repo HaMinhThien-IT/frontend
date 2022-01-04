@@ -1,14 +1,18 @@
 import React from 'react'
 import { formatMoney } from '../../../components/helper'
-import { Order } from '../../../model/order'
+import { Order, OrderWithDetail } from '../../../model/order'
 import './CheckOutItem.css'
-export default function CheckOutItem(props:props) {
-   let date:string = new Date(props.order.createAt).toString()
-   let minutes = new Date(props.order.createAt).getMinutes().toString()
-   let hours = new Date(props.order.createAt).getHours().toString()
-   let day = new Date(props.order.createAt).getDay().toString()
-   let month = new Date(props.order.createAt).getMonth().toString()
-   let year = new Date(props.order.createAt).getFullYear().toString()
+export default function CheckOutItem(props: props) {
+    let minutes = new Date(props.orderWithDetail.time_order).getMinutes().toString()
+    let hours = new Date(props.orderWithDetail.time_order).getHours().toString()
+    let day = new Date(props.orderWithDetail.time_order).getDay().toString()
+    let month = new Date(props.orderWithDetail.time_order).getMonth().toString()
+    let year = new Date(props.orderWithDetail.time_order).getFullYear().toString()
+    let total = 0;
+    for (let i = 0; i <props.orderWithDetail.orderProducts.length; i++) {
+        total += props.orderWithDetail.orderProducts[i].quantity * props.orderWithDetail.orderProducts[i].price
+      //  console.log(props.orderWithDetail.orderProducts[i].price + props.orderWithDetail.orderProducts[i].product.name);      
+    }
 
 
     return (
@@ -20,37 +24,43 @@ export default function CheckOutItem(props:props) {
                     <button className="viewShop">View shop</button>
                 </div>
                 <div className="orderHeaderTime">
-                    <div className="timeOrder">{hours +' : ' + minutes +' '+ day +'/' + month +'/'+ year}<span>Pending</span></div>
-                    <div className="code">{props.order.name} (5676547456), 567465745 456746574567546, 45675467, 745674567456</div>
+                    <div className="timeOrder">{hours + ' : ' + minutes + ' ' + day + '/' + month + '/' + year}<span>Pending</span></div>
+                    <div className="code">{props.orderWithDetail.user.nameUser} (5676547456), 567465745 456746574567546, 45675467, 745674567456</div>
                 </div>
             </div>
 
-            <div className="productCheckout">
-                <div className="productCheckoutInfor">
-                    <img src={props.order.product.image} />
-                    <div className="inforProductCheckout">
-                        <h4 className="name">{props.order.product.name}</h4>
-                        <div className="note">
-                            (XS, Legend Ink / Bold Blue)
+            {
+                props.orderWithDetail.orderProducts.map((item, index) => (
+                    <div className="productCheckout" key={index}>
+                        <div className="productCheckoutInfor">
+                            <img src={item.product?.image} />
+                            <div className="inforProductCheckout">
+                                <h4 className="name">{item.product?.name}</h4>
+                                <div className="note">
+                                    (XS, Legend Ink / Bold Blue)
+                                </div>
+                                <div className="quantity">X
+                                    {item.quantity}
+                                </div>
+                            </div>
                         </div>
-                        <div className="quantity">X
-                        {props.order.product.quantity}
+                        <div className="priceCheckout">
+                            <p>{formatMoney(item.quantity* item.price)} VND</p>
                         </div>
                     </div>
-                </div>
-                <div className="priceCheckout">
-                    <p>{formatMoney(props.order.product.price)} VND</p>
-                </div>
-            </div>
+                ))
+            }
+
+
 
             <div className="totalProductCheckout">
                 <div className="shiping">
                     <p className='fee'>This shipping fee has not included</p>
-                    <p className='cost'>Estimated cost : <span>{formatMoney(props.order.product.quantity * props.order.product.price)} VND</span></p>
+                    <p className='cost'>Estimated cost : <span>{formatMoney(props.orderWithDetail.orderProducts[0].quantity * props.orderWithDetail.orderProducts[0].price)} VND</span></p>
                     <p className='cost '>Shipping fee: <span className='cost1'>£0</span></p>
                 </div>
                 <div className="totalpriceShoping">
-                    <p>Total: <span>{formatMoney(props.order.product.quantity * props.order.product.price)} VND</span></p>
+                    <p>Total: <span> {formatMoney(total)} VND</span></p>
                 </div>
             </div>
 
@@ -58,5 +68,5 @@ export default function CheckOutItem(props:props) {
     )
 }
 interface props {
-    order : Order
+    orderWithDetail: OrderWithDetail
 }

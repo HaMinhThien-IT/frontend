@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Product, listProducts } from '../../../model/Product'
+import { Product } from '../../../model/Product'
 import Model from '../Modal/Model'
 import ProductItem from '../product/ProductItem'
 import './Reset.css'

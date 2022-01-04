@@ -1,16 +1,11 @@
+import { Product } from "./Product";
+
 export interface Cart {
     id: string,
-    image: string,
-    name: string,
+    order_product_id: string,
+    order_id : string
     price: number,
     quantity : number
+    product:Product
 }
 
-export const listCart = () => {
-    let listCart = []
-    let localTam = localStorage.getItem('cart')
-    if (localTam !== null) {
-        listCart = JSON.parse(localTam)
-    }
-    return listCart
-}
