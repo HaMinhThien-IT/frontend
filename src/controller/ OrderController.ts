@@ -5,8 +5,8 @@ class OrderController {
     checkout(user:BuyUser,order_id:string){
         return axios.post(`${localHost}/checkout`,{user,order_id})
     }
-    getListOrderProduct(user_id:number){
-        return axios.get(`${localHost}/getListOrder/${user_id}`).then(res => {return res.data})
+    getListOrderProduct(user_id:number,pageSize:number,page:number){
+        return axios.post(`${localHost}/getListOrder/${user_id}`,{pageSize,page}).then(res => {return res.data})
     }
     async cart(id: string, quantity: number, price: number,user_id:number) {
         return axios.post(`${localHost}/order/${id}`, { quantity, price,user_id })

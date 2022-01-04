@@ -11,3 +11,88 @@
 .containerOrder1{
     padding: 5px 300px;
 }
+.buttonNumberPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.nextPage{
+    background: none;
+    outline: none;
+    border: none;
+    color: black;
+    padding: 10px;  
+}
+.nextPageActive{
+    background: none;
+    outline: none;
+    border: none;
+    color: rgba(163, 162, 162, 0.333);
+    padding: 10px;  
+}
+.numberPage:hover{
+    background-color: rgba(120, 123, 126, 0.08);
+}
+.numberPage{
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    border-radius: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 32px;
+    height: 32px;
+    padding: 0px 6px;
+    margin: 0px 3px;
+    color: rgb(85, 86, 85);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.numberPageActive{
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    border-radius: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 32px;
+    height: 32px;
+    padding: 0px 6px;
+    margin: 0px 3px;
+    color: rgb(85, 86, 85);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    color: rgb(251, 132, 116);
+    background-color: rgba(251, 132, 116, 0.08);
+}
