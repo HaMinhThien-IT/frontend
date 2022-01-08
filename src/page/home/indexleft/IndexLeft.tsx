@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function IndexLeft() {
+export default function IndexLeft(name:props) {
     return (
         <div className="khoiTrai">
             <div className="logo">
@@ -34,7 +34,7 @@ export default function IndexLeft() {
                 <div className="hotLineBox">
                     <a href="tel:0981832226">
                         <i className="fas fa-phone-alt" />
-                        <span>0981832226</span>
+                        <span>{name.name}</span>
                     </a>
                 </div>
             </div>
@@ -49,4 +49,7 @@ export default function IndexLeft() {
         </div>
 
     )
+}
+interface props {
+    name : string
 }

@@ -4,19 +4,15 @@ import Model from '../Modal/Model'
 import ProductItem from '../product/ProductItem'
 import './Reset.css'
 import { v4 as uuidv4 } from 'uuid';
-import Filter from '../../../components/filter/Filter'
-import axios from 'axios'
 import { productController } from '../../../controller/ProductController'
 import { toast } from 'react-toastify'
 
 export default function TableProduct() {
     const [listProduct, setListProduct] = useState<Product[]>([])
     const [edit, setEdit] = useState<Product>({ id: '', name: '', image: '', price: 1 })
-    const [filter, setFilter] = useState<Product>({ id: '', name: '', image: '', price: 1 })
-    const [inputSearch, setInputSearch] = useState<string>('')
     useEffect(() => {
         productController.list().then(res => {
-            setListProduct(res);
+            setListProduct(res);        
         })
     }, [])
     const onDelete = (id: string): void => {
