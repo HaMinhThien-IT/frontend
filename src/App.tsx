@@ -16,37 +16,41 @@ import Order from './page/order/Order';
 import CheckOut from './page/checkout/CheckOut';
 import Login from './page/Auth/Login/Login';
 import IndexLeft from './page/home/indexleft/IndexLeft';
-import { useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { authController } from './controller/AuthController';
-
+import { Cartx } from './model/Cartx';
+import { orderController } from './controller/ OrderController';
+import Context from './store/Context';
+import ContextOrderQuantity from './store/ContextOrderQuantity';
+import IndexRight from './page/home/indexright/indexRight';
 
 
 function App() {
-  const [name,setName] = useState<string>('')
-  console.log(name);
-  
-  useEffect(()=>{
-    authController.getMe().then(res => {
-      setName(res.nameUser);      
-  })
-  },[])
+
   return (
 
     <BrowserRouter>
-     <IndexLeft name={name}/>
-      <ToastContainer/>
-     
-      <Routes>
-     
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/admin' element={<TableProduct />}></Route>
-        <Route path='/product/:id' element={<ProductDetail />}></Route>
-        <Route path='/cart' element={<CartPage />}></Route>
-        <Route path='/order' element={<Order />}></Route>
-        <Route path='/checkout' element={<CheckOut />}></Route>
-        <Route path='/login' element={<Login />}></Route>
-       
-      </Routes>
+      <Context>
+        <ContextOrderQuantity>
+          <IndexLeft />
+
+      
+
+        <ToastContainer />
+
+        <Routes>
+
+          <Route path='/' element={<IndexRight />}></Route>
+          <Route path='/admin' element={<TableProduct />}></Route>
+          <Route path='/product/:id' element={<ProductDetail />}></Route>
+          <Route path='/cart' element={<CartPage />}></Route>
+          <Route path='/order' element={<Order />}></Route>
+          <Route path='/checkout' element={<CheckOut />}></Route>
+          <Route path='/login' element={<Login />}></Route>
+        
+        </Routes>
+        </ContextOrderQuantity>
+      </Context>
     </BrowserRouter>
   );
 }

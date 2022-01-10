@@ -16,14 +16,7 @@ export default function Login() {
             console.log(res.status);
             localStorage.setItem('jwt', res)
             authAxios.defaults.headers.common['authorization'] = res;
-            if (res.status != 404) {
-                window.location.href="/"
-                console.log(res);
-
-            } else {
-
-
-            }
+            window.location.href = '/'
 
         }
         )

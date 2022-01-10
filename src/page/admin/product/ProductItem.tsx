@@ -9,7 +9,7 @@ interface props {
 export default function ProductItem(props : props) {
     return (
      
-              <tr>
+              <tr >
                         <td>
                            {props.product.id}
                         </td>

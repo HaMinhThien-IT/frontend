@@ -1,4 +1,5 @@
 import axios from "axios";
+import { authAxios } from "../http";
 import { BuyUser } from "../model/BuyUser";
 let localHost: string = 'http://localhost:3000'
 class OrderController {
@@ -12,20 +13,20 @@ class OrderController {
         return axios.post(`${localHost}/order/${id}`, { quantity, price,user_id })
     }
     async listCart(user_id :number) {
-        return axios.post(`${localHost}/listCart`,{user_id}).then(res => { return res.data })
+        return authAxios.post(`${localHost}/listCart`,{user_id}).then(res => { return res.data })
     }
-    plus(order_product_id:string){       
-        return axios.post(`${localHost}/plus`, {order_product_id }).then(res =>{
+    plus(order_product_id:string,user_id:number){       
+        return axios.post(`${localHost}/plus`, {order_product_id ,user_id}).then(res =>{
          return res.data
         })
     }
-    minus(order_product_id:string){       
-        return axios.post(`${localHost}/minus`, {order_product_id }).then(res =>{
+    minus(order_product_id:string,user_id:number){       
+        return axios.post(`${localHost}/minus`, {order_product_id,user_id }).then(res =>{
          return res.data
         })
     }
-    delete(order_product_id:string){       
-        return axios.post(`${localHost}/delete`, {order_product_id }).then(res =>{
+    delete(order_product_id:string,user_id:number){       
+        return axios.post(`${localHost}/delete`, {order_product_id ,user_id}).then(res =>{
          return res.data
         })
     }

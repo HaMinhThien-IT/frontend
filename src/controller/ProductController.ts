@@ -31,7 +31,7 @@ class ProductController {
         return axios.get(`${localHost}/detail/${id}`).then(res => { return res.data })
     }
     search(name:string){
-        return axios.get(`${localHost}/filter/${name}`).then(res => {return res.data})
+        return authAxios.get(`${localHost}/filter/${name}`).then(res => {return res.data})
     }
 }
 export const productController = new ProductController();

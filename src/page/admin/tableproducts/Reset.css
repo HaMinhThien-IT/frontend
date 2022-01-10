@@ -200,16 +200,7 @@ table .user img {
 .sticky-table tbody td:first-child span {
   padding-right: 50px;
 }
-/* .sticky-table {
-  position: relative;
+.tableProduct{
+  width: 79%;
+  float: right;
 }
-.sticky-table:before {
-  content: "";
-  height: 100%;
-  width: 1px;
-  background-color: red;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-} */

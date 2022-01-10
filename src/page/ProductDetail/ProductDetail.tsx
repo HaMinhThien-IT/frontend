@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './ProductDetail.css'
 import Footer from '../../components/footer/Footer'
 import { productController } from '../../controller/ProductController'
 import { Product } from '../../model/Product'
-import { Cart } from '../../model/Cart'
+
 import { toast } from 'react-toastify'
 import { orderController } from '../../controller/ OrderController'
+import { authController } from '../../controller/AuthController'
+import { userContext } from '../../store/Context'
 
 
 export default function ProductDetail() {
@@ -20,13 +22,15 @@ export default function ProductDetail() {
         )
         
     }, [id])
-
-
-
-
+    const {user_id,onSetUser_id} = useContext(userContext)
+    useEffect(()=>{
+        authController.getMe().then(res=>{         
+            onSetUser_id(res.user_id);           
+        })
+    },[])
     const addToCart = () => {
         // 
-        orderController.cart(String(id),quantity,Number(product?.price),3)
+        orderController.cart(String(id),quantity,Number(product?.price),user_id)
         toast.success('Thêm đơn hàng thành công', {
             position: 'top-center',
             autoClose: 3000
@@ -40,7 +44,7 @@ export default function ProductDetail() {
     }
 
     return (
-        <div>
+        <div className='chiTietSanPham'>
 
             <div className="hinhAnh-sanPham">
                 <img src={product?.image} />
@@ -61,11 +65,12 @@ export default function ProductDetail() {
                     <button onClick={plus}> <i className="fas fa-minus"></i></button>
                 </p>
                 <br />
-                <button onClick={addToCart} className="themVaoGioHang" >
+                <Link to="/cart">   <button onClick={addToCart} className="themVaoGioHang" >
                     <p>
                         THÊM VÀO GIỎ HÀNG
                     </p>
-                </button>
+                </button></Link>
+             
                 <button className="muangay">
                     Mua ngay
                 </button>
@@ -79,7 +84,6 @@ export default function ProductDetail() {
                     <p><i className="fas fa-chevron-right" /><i className="fas fa-chevron-right" /> HOTLINE BÁN HÀNG 1900 633 501</p>
                 </div>
             </div>
-            <Footer />
         </div >
 
     )

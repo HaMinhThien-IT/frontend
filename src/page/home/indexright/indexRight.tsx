@@ -1,8 +1,12 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import Footer from '../../../components/footer/Footer'
+import { orderController } from '../../../controller/ OrderController'
+import { authController } from '../../../controller/AuthController'
 import { productController } from '../../../controller/ProductController'
 import { Product } from '../../../model/Product'
+import { userContext } from '../../../store/Context'
+import { quanTityOrderContext } from '../../../store/ContextOrderQuantity'
 import ProductHome from '../productHome/ProductHome'
 
 
@@ -11,14 +15,25 @@ export default function IndexRight() {
     const [inputSearch, setInputSearch] = useState<string>('')
     const [count, setCount] = useState([{}]);
 
+    const {onSetUserName,onSetUser_id,user_id} = useContext(userContext)
+    const {onSetQuantityOrder} = useContext(quanTityOrderContext)
+    useEffect(()=>{
+        authController.getMe().then(res => {
+            onSetUserName(res.nameUser)
+            onSetUser_id(res.user_id)
+          })
+    },[user_id])
+    useEffect(() => {
+        orderController.listCart(user_id).then(res =>{
+            onSetQuantityOrder(res.length)
+        })  
+    },[user_id])
     const [pageNumber, setPageNumber] = useState<number>(1)
     useEffect(() => {     
             productController.listProduct(1, '', 4).then(res => {
-                setListProduct(res.product);
-                
+                setListProduct(res.product);            
                 setCount(res.arr)
             })
-
     }, [])
     const onNumber = (id: number) => {
         if(inputSearch !== null){
@@ -37,16 +52,12 @@ export default function IndexRight() {
     }
     const nextPage = () => {
         if (pageNumber > 1) {
-
             onNumber(pageNumber - 1)
-
         }
     }
     const pevPage = () => {
         if (pageNumber < count.length) {
-
             onNumber(pageNumber + 1)
-
         }
     }
     const  search = (name : string) =>{

@@ -31,12 +31,46 @@ ul{
 li{
     list-style: none;
 }
-.khoiTrai{
+.khoiTraiIndexleft{
     float: left;
     width: 19%;
- 
     position: fixed;
     height: 100%;
+    max-width: 19%;
+}
+.quantityCart{
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    background-color: red;
+    outline: 0px;
+    border: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    border-radius: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 22px;
+    height: 22px;
+    padding: 0px 6px;
+    margin: 0px 3px;
+    color: white;
+    position: relative;
+    margin-top: -40px;
+    margin-left: -12px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
 }
 .btnPage{
     display: inline-block;
@@ -82,7 +116,7 @@ li{
     width: 81%; 
     height: 100%;
 }
-.khoiTrai, .logo img{
+.Indexleft, .logo img{
     object-fit: contain;
     align-items: center;
     max-width: 100%;
@@ -295,13 +329,7 @@ footer{
 #anh2{
     margin-left: 20px;
 }
-.sanPham p {
-    text-align: center;
-    font-size: 31px;
-    font-weight: 700;
-    line-height: 35px;
-    font-style: normal;
-}
+
 /*  sản phẩm */
 #danhSachSanPham{
     width: 100%;
@@ -346,9 +374,7 @@ footer{
     font-size: 14px;
     line-height: 18px;
 }
-.sanPham p {
-    text-align: center;
-}
+
 .thien{
     margin-top: 20px;
 }
@@ -495,7 +521,7 @@ footer{
     li{
         list-style: none;
     }
-    .khoiTrai{
+    .Indexleft{
         float: left;
         width: 19%;
      
@@ -507,7 +533,7 @@ footer{
         width: 81%; 
         height: 100%;
     }
-    .khoiTrai, .logo img{
+    .Indexleft, .logo img{
         object-fit: contain;
         align-items: center;
         max-width: 100%;
@@ -695,13 +721,7 @@ footer{
     #anh2{
         margin-left: 20px;
     }
-    .sanPham p {
-        text-align: center;
-        font-size: 31px;
-        font-weight: 700;
-        line-height: 35px;
-        font-style: normal;
-    }
+
     /*  sản phẩm */
     #danhSachSanPham{
         width: 100%;
@@ -710,7 +730,9 @@ footer{
         width: 22%;
     }
     
-    
+    .sanPham p {
+        text-align: center;
+    }
     
     .left{
         width: 50%;
@@ -1026,3 +1048,21 @@ footer{
         width: 50%;
         margin-bottom: 20px;
      }
+
+     /* new */
+    .btnAddToCart{
+     padding: 10px 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin:10px auto;
+     background: none;
+     border: 1px solid black;
+     border-radius: 5px;
+     transition: 0.3s;
+    }
+    .btnAddToCart:hover{
+        background: black;
+        color: white;
+    }
+    

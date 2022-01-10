@@ -55,7 +55,7 @@ export default function TableProduct() {
 
     }
     return (
-        <div>
+        <div className='tableProduct'>
 
             <Model key={uuidv4()} onAdd={onData} dataEdit={edit} />
             <input type="text" onChange={e => search(e.target.value)} />

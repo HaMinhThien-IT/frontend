@@ -1,4 +1,7 @@
-
+.containerCart{
+    width: 79%;
+    float: right;
+}
 
 /*  giỏ hàng */
 .contentProduct p {

@@ -8,7 +8,10 @@
     padding: 0px 10px;
 }
 
-
+.chiTietSanPham{
+    width: 79%;
+    float: right;
+}
 .thongTin-sanPham{
     float: right;
     width: 70%;
